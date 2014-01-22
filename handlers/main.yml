@@ -1,0 +1,10 @@
+---
+# Handlers for Scout notifications.
+
+- name: stop scout
+  command: >
+    {{ scout_daemon }} stop
+
+- name: start scout
+  command: >
+    {{ scout_daemon }} -p {{ scout_port }} -l {{ scout_logpath }} -i {{ scout_pidpath }} start

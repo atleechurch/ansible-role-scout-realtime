@@ -1,0 +1,7 @@
+---
+# The variables file used by Scout Realtime playbooks.
+# If not overriden in inventory or as a parameter, this is the value that will be used
+
+scout_port: 5555
+scout_logpath: '/var/log/scout_realtime.log'
+scout_pidpath: '/root/.scout/scout_realtime.pid'

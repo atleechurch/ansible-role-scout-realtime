@@ -1,0 +1,13 @@
+---
+# Defines tasks to install and configure Scout Realtime
+
+- name: Install Scout Realtime
+  gem: >
+    name={{ item }}
+    state=latest
+  with_items: scout_gems
+  notify:
+    - start scout
+  tags:
+    - scout
+    - metrics

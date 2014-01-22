@@ -1,0 +1,5 @@
+---
+# Defines variables for Scout Realtime
+
+scout_daemon: 'scout_realtime'
+scout_gems: 'scout_realtime'
