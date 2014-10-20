@@ -1,10 +1,12 @@
 # Scout Realtime Role for Ansible
 
-This role installs [Scout Realtime](http://scoutapp.github.io/scout_realtime/) which provides easy, beautiful, and free real-time server metrics.
+This role installs [Scout Realtime](http://scoutapp.github.io/scout_realtime/)
+which provides easy, beautiful, and free real-time server metrics.
 
 ## Requirements
 
-This role requires [Ansible](http://www.ansibleworks.com/) version 1.4 or higher and the Debian/Ubuntu platform and Ruby 1.8.7 or higher.
+This role requires [Ansible](http://www.ansibleworks.com/) version 1.4 or higher
+and the Debian/Ubuntu platform and Ruby 1.8.7 or higher.
 
 ## Role Variables
 
@@ -22,7 +24,8 @@ scout_logpath: '/var/log/scout_realtime.log'
 scout_pidpath: '/root/.scout/scout_realtime.pid'
 ```
 
-__Note:__ Scout Realtime is currently in beta. Currently if you change the PID path, the daemon will no longer stop properly and the process must be manually killed.
+__Note:__ Scout Realtime is currently in beta. Currently if you change the PID
+path, the daemon will no longer stop properly and the process must be manually killed.
 
 ## Examples
 
@@ -56,7 +59,9 @@ __Note:__ Scout Realtime is currently in beta. Currently if you change the PID p
 
 ## Dependencies
 
-None.
+The following packages may be required for Debian derivatives:
+
+- `rubygems`
 
 ## License
 
