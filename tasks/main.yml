@@ -1,13 +1,30 @@
 ---
 # Defines tasks to install and configure Scout Realtime
 
-- name: Install Scout Realtime
+- name: "Scout Realtime | Install Scout Realtime"
   gem: >
     name={{ item }}
     state=latest
-  with_items: scout_gems
+    user_install=no
+  with_items: scout_realtime
   notify:
     - start scout
   tags:
     - scout
     - metrics
+
+- name: "Scout Realtime | Add port to iptables for Scout"
+  command: iptables -A INPUT -p tcp --dport 5555 -j ACCEPT
+
+- name: "Scout Realtime | Link scout_realtime into init.d"
+  file: src=/usr/local/bin/scout_realtime dest=/etc/init.d/scout_realtime state=link
+  sudo: true
+
+#
+# TODO: Fix Scout for systemd, I think the init.d script needs to be rewritten
+# for systemd, but am not completely sure.
+#
+
+- name: "Scout Realtime | Add Scout Realtime into default runlevels"
+  service: name=scout_realtime enabled=yes
+  sudo: true
